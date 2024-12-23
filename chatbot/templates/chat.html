@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Chat{% endblock %}
+{% block content %}
+<h2>Chat</h2>
+<div id="chat-box" class="border p-3 mb-3" style="height: 300px; overflow-y: scroll;"></div>
+<form id="chat-form">
+    <div class="input-group">
+        <input type="text" class="form-control" id="message" placeholder="Type a message" required>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script>
+    const socket = io.connect();
+    const chatBox = document.getElementById('chat-box');
+    const chatForm = document.getElementById('chat-form');
+    const messageInput = document.getElementById('message');
+
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = messageInput.value;
+        socket.emit('send_message', { message });
+        messageInput.value = '';
+    });
+
+    socket.on('receive_message', (data) => {
+        const newMessage = document.createElement('div');
+        newMessage.textContent = `${data.user}: ${data.message}`;
+        chatBox.appendChild(newMessage);
+    });
+</script>
+{% endblock %}
