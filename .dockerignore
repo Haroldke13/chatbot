@@ -1,0 +1,32 @@
+# VCS
+.git
+.gitignore
+.github
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Local databases / migration output that should not be baked in
+*.db
+*.sqlite3
+instance/
+
+# Local noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
+Dockerfile
+.dockerignore
+DEPLOY.md
