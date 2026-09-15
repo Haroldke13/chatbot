@@ -79,8 +79,14 @@ Werkzeug dev server in production is not recommended.
 ## Status
 
 **Working prototype.** Last commit December 2024. Registration, login, broadcast chat and the admin
-view all work against a local PostgreSQL instance. No tests, no `.gitignore`, no LICENSE file.
+view all work against a local PostgreSQL instance. No tests and no `.gitignore`.
 
 ## Licence
 
-None. **TODO: add a LICENSE file** — without one, the default is "all rights reserved".
+**Proprietary software — all rights reserved.** Copyright © 2026 Joel Harold Onyango.
+
+This repository is not open source. The full terms are in [LICENSE](LICENSE); in
+summary, you may not copy, redistribute, modify, sublicense, publish, re-host or
+commercially exploit this software, in whole or in part, without the prior
+written permission of the copyright holder. Access to this repository does not
+grant any licence beyond reading it.
